@@ -1,8 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@200&display=swap');
+
 body{
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    min-height: 250vh;
     color: white;
+    font-family: "Comme", sans-serif;
+    font-weight: lighter;
+    width: 100%;
 }
 
 /* HEADER */
@@ -10,11 +16,12 @@ header{
     background-color: black;
     padding: 5px 5px 5px 40px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     gap: 50px;
     height: 5vh;
 }
 
+/* el índice de la página */
 header > nav {
     width: 100%;
     display: flex;
@@ -23,47 +30,22 @@ header > nav {
 }
 
 .nav-list {
-    width: 100%;
     display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     list-style: none;
-}
-
-.button-header{
-    width: 200px;
-    height: 30px;
-    margin-top: 5px;
-    background-color: #9A7B30;
-    text-transform: uppercase;
-    border-radius: 15px;
-    border-style: none;
-}
-
-.button-header > a {
-    color: white;
-    font-size: 15px;
 }
 
 a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 a:hover {
-    color: black;
+    color:  #9A7B30;
 } 
-
-.menu{
-    margin-top: 10px;
-    width: 20px;
-    height: 20px;
-    display: none;
-    background-color: white;
-    border-radius: 10px;
-}
 
 /* MAIN */
 #hero{
@@ -72,75 +54,309 @@ a:hover {
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: start;
-    justify-content: end;
-    border: 2px solid blue;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid rgb(79, 79, 79);
+    border-radius: 5px;
+    width: 100%;
 }
 
+/* texto que aparece en el hero */
 .container {
-    margin: 10px;
-    width: 400px;
-    border: 2px solid blueviolet;
+    margin: 50px;
+    width: 30%;
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.button-hero{
+    width: 200px;
+    height: 30px;
+    background-color: #9A7B30;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border-style: none;
+    margin-top: 5px;
+}
+
+.button-hero > a {
+    color: white;
+    font-size: 15px;
+}
+.button-hero > a:hover {
+   color: black;
+}
+
+/* contenido donde aparecen las 6 fichas y el vídeo */
+#content {
+    min-height: 150vh;
+    background-image: url(https://media.contentapi.ea.com/content/dam/ea/starwars/star-wars-jedi-survivor/homepage/common/starwarsjedi-black-pagebg-xl.png.adapt.1920w.png);
+    background-size: cover;
+    /* PARA QUE EL FONDO NO SE MUEVA AL HACER SCROLL */
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 120px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 90px;
+    border: 2px solid #9A7B30;
+    border-radius: 25px;
+    padding: 50px;
+    color: #9A7B30;
+}
+
+#content ul {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+    list-style-type: none;
+    width: 90%;
+}
+
+#content > ul > li {
+    flex-basis: 350px;
+    flex-grow: 1;
+}
+
+/* laas caracterísiticas de las fichas */
+.box {
+    background-color: black;
+    border: 3px solid rgb(79, 79, 79);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 750px;
+    width: 400px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.box:hover {
+    transform: scale(1.1);
+    /* cuando pasas el ratón por encima, la imagen aumenta */
+}
+  
+.box > h2 {
+    color: #9A7B30;
+    font-size: 40px;
+    text-align: center;
+}
+
+.box img {
+    width: 100%;
+}
+
+#last-box > figcaption {
+    margin-bottom: 60px;
+}
+
+.box > figcaption {
+    font-size: 25px;
+    text-align: center;
+}
+
+iframe{
+    margin: 50px;
+    width: 60%;
 }
 
 /* FOOTER */
 footer{
-    height: 15vh;
+    height: 20vh;
     background-color: black;
+    display: flex;
+    justify-content: center;
 } 
 
-/* media para el header */
-@media (max-width: 960px) {
-    .button-header{
-        width: 180px;
-        height: 20px;
-        margin-top: 10px;
-        background-color: #9A7B30;
-        text-transform: uppercase;
-        border-radius: 15px;
-        border-style: none;
-        overflow: hidden;
-        padding-top: 2px ;
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 40px;
+}
+
+.box1 > a > img{
+    width: 100px;
+}
+  
+
+/* MEDIAS QUERIES */
+
+
+/* HEADER */
+@media (max-width: 1200px) {
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
     }
-    
-    .button-header > a {
+
+.container {
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    }
+
+/* MAIN */
+.box{
+    height: 550px;
+}
+.box > h2 {
+    color: #9A7B30;
+    font-size: 30px;
+    margin: 0;
+    }
+
+.box > figcaption {
+    font-size: 20px;
+    text-align: center;
+    }
+}
+
+@media (max-width: 1090px){
+    a {
         color: white;
-        font-size: 12px;
+        text-decoration: none;
+        font-size: 10px;
+        }
+
+    .container{
+        display: none;
     }
-    
+
+    #opinion {
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button-hero{
+        width: 150px;
+        height: 20px;
+    }
+
+    .button-hero > a {
+    color: white;
+    font-size: 12px;
+    }
+
+    #hero {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    h1 {
+        font-size: 25px;
+        padding: 60px;
+        margin-left: 40px;
+    }
+
+    #content ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        list-style-type: none;
+    }
+
+    iframe{
+        width: 550px;
+        height: 400px;
+    }
+} 
+
+@media (max-width: 540px){
+    header > nav {
+        display: none;
+    } 
+    .menu {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        margin-top: 2px;
+        margin-right: 20px;
+        border: 2px solid rgb(79, 79, 79);
+        border-radius: 5px;
+    } 
+
     a {
         color: white;
         text-decoration: none;
         font-size: 8px;
+        }
+
+    #opinion {
+        font-size: 15px;
     }
-}
 
-@media (max-width: 640px){
-    header > nav {
-        display: none;
-    } 
-/* poner que aparezca el menu hamburgesa para ese tamaño de pantalla */
-    .menu {
-        margin: 10px;
-        display: block;
-    } 
-    header{
-        display: flex;
-        justify-content: center;
+    h1{
+        font-size: 15px;
+        padding: 20px;
+        margin: 90px 0px 0px 0px;
     }
-}
 
+    #content ul {
+        padding: 0;
+    }
 
-/* Media para #hero */
-@media (max-width: 1000px){
-    .container {
-        margin: 20px;
-        width: 300px;
-        border: 2px solid blue;
+    .box{
+        height: 300px;
+        width: 70%;
+    }
+
+    .box > h2 {
+        color: #9A7B30;
+        font-size: 15px;
+        margin: 0;
+        }
+    
+    .box > figcaption {
+        font-size: 10px;
         text-align: center;
-        font-size: 18px;
+        }
+
+    #last-box > h2 {
+        margin-bottom: 10px;
+    }
+
+    .img4{
+        padding-bottom: 10px;
+    }
+
+    /* importante para que las imágenes se adapten a dispositivos pequeños */
+    img {
+        max-width: 100%;
+        height: auto;
     }
     
+    iframe {
+        width: 350px;
+        height: 200px;
+    }
+
+} 
+
+@media (max-width: 375px) {
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
 }
+
+
+
